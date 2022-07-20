@@ -1,15 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+<ul class="nav">
+  <li class="active">
+    <a href="#">Home</a>
+  </li>
+  <li><a href="#">Link</a></li>
+  <li><a href="#">Link</a></li>
+</ul>
+</div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import jquery from 'jquery'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  },
+  data(){
+    return {
+
+    }
+  },
+  mounted(){
+    this.$nextTick(()=>{
+      jquery('.nav').hide();
+      jquery('.nav').fadeIn('slow');
+    })
   }
 }
 </script>
@@ -22,5 +40,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+li{
+  padding:20px;
 }
 </style>
